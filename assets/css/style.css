@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
 }
 .contenedor {
     background: #ccc;
@@ -31,13 +32,8 @@ header .logo {
     font-size: 30px;
 }
 header .logo img {
-    width: 50px;
+    width: 150px;
     vertical-align: top;
-}
-header .logo a {
-    color: #fff;
-    text-decoration: none;
-    line-height: 50px;
 }
 header nav {
     width: 50%;
@@ -46,46 +42,105 @@ header nav {
     align-items: center;
 }
 header nav a {
-    background: #c0392b;
+    background: #EC2928;
     color: #fff;
     text-align: center;
     text-decoration: none;
     padding: 10px;
     flex-grow: 1;
+    text-transform: uppercase;
 }
 header nav a:hover {
-    background: #e74c3c;
+    background: rgb(240, 74, 74);
 }
 .main {
     background: #fff;
     padding: 20px;
     flex: 1 1 70%;
-    /* flex: 1; */
 }
 .main article {
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid #000;
 }
+.main article .tecnologias{
+    
+}
+.main article .tecnologias img{
+    max-width: 80px;
+}
 .main article:nth-last-child(1) {
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: none;
 }
+.contactoUno {
+    background: #fff;
+    padding: 20px;
+    flex: 1 1 50%;
+}
+.contactoUno article {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #000;
+}
+.contactoUno article:nth-last-child(1) {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.titulo {
+    margin: 5px 0;
+}
+.lista{
+    list-style: none;
+}
+.negrita{
+    font-weight: bold;
+}
+iframe {
+    width: 100%;
+    border: 0;
+}
 aside {
-    background: #e67e22;
+    background: #EC2928;
     padding: 20px;
     flex: 1 1 30%;
-    /* flex: 0 0 300px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     flex-direction: column;
 }
-aside .widget {
-    background: #d35400;
+aside .widgetUno {
+    background-image: url('/assets/img/valencia.jpg');
     height: 150px;
     margin: 10px;
+}
+aside .widgetDos {
+    background-image: url('/assets/img/madrid.jpg');
+    height: 150px;
+    margin: 10px;
+}
+
+.contactoDos {
+    background: white;
+    padding: 20px;
+    flex: 1 1 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+}
+.contactoDos .mapa iframe{
+    display: flex;
+    align-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
 }
 footer {
     background: #2c3e50;
@@ -94,28 +149,30 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
 }
-
 footer .links {
-    background: #c0392b;
+    background: #EC2928;
     display: flex;
     flex-wrap: wrap;
 }
-
 footer .links a {
     flex-grow: 1;
     color: #fff;
     padding: 10px;
     text-align: center;
     text-decoration: none;
+    text-transform: uppercase;
 }
-
 footer .links a:hover {
-    background: #e74c3c;
+    background: rgb(240, 74, 74);
 }
 footer .social {
-    background: #e67e22;
+    display: flex;
+}
+footer .social img {
+    display: flex;
+    padding: 5px;
+    width: 40px;
 }
 footer .social a {
     color: #fff;
@@ -123,7 +180,6 @@ footer .social a {
     padding: 10px;
     display: inline-block;
 }
-
 @media screen and (max-width: 800px) {
     .contenedor {
         flex-direction: column;
@@ -144,16 +200,32 @@ footer .social a {
         flex-direction: row;
         flex: 0;
     }
-    aside .widget {
+    aside .widgetUno {
         flex-grow: 1;
     }
+    aside .widgetDos {
+        flex-grow: 1;
+    }
+    .contactoDos .mapa iframe{
+        min-height: 350px;
+    }
 }
-
 @media screen and (max-width: 600px) {
     aside {
         flex-direction: column;
     }
-
+    header .logo img{
+        max-width: 150px;
+    }
+    .contactoDos .mapa iframe{
+        min-height: 200px;
+    }
+    aside .widgetUno {
+        flex-grow: 1;
+    }
+    aside .widgetDos {
+        flex-grow: 1;
+    }
     footer {
         justify-content: space-around;
     }
